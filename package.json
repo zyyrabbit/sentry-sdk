@@ -1,5 +1,5 @@
 {
-  "name": "@leafs/sentry-sdk",
+  "name": "sentry-sdk",
   "version": "0.1.0",
   "description": "An sentry sdk",
   "main": "index.js",
