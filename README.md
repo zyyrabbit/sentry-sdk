@@ -31,7 +31,6 @@ An sdk sentry
 
 ### webpack配置自动上传
 
-1. 安装相关webpack 插件与使用
 
 ```tsx
    npm install --save-dev @sentry/webpack-plugin
@@ -43,7 +42,25 @@ An sdk sentry
         inclue: string, // 作用文件夹，一般为项目打包文件夹 './dist'
         configFile: 'sentry.properties',
         ignore: ['node_modules', 'vue.config.js'],
-        urlPrefix: '~/' // 对应webpack public配置
+        urlPrefix: '~/' // 对应webpack publicPath配置
       })
    ] 
 ```
+使用vue-cli 打包配置
+
+注意配置文件设置** productionSourceMap: true **生成sourceMap, 然后上传后，注意删除sourceMap
+
+```tsx
+   npm install --save-dev @sentry/webpack-plugin
+
+   const SentryCliPlugin = require("@sentry/webpack-plugin");
+
+   config.plugin('sentry').use(SentryCliPlugin, [{
+      release: string, // 注意需要和Sentry 初始化时传入release对应
+      inclue: string, // 作用文件夹，一般为项目打包文件夹 './dist'
+      configFile: 'sentry.properties',
+      ignore: ['node_modules', 'vue.config.js'],
+      urlPrefix: '~/' // 对应webpack publicPath配置
+   }]);
+```
+
