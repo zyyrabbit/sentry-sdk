@@ -23,7 +23,6 @@
   "homepage": "https://github.com/zyyrabbit/sentry-sdk#readme",
   "dependencies": {
     "@sentry/browser": "^5.27.3",
-    "@sentry/integrations": "^5.27.3",
-    "vue": "^2.6.12"
+    "@sentry/integrations": "^5.27.3"
   }
 }
