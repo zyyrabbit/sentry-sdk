@@ -1,0 +1,29 @@
+{
+  "name": "sentry-sdk",
+  "version": "1.0.0",
+  "description": "An sentry sdk",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zyyrabbit/sentry-sdk.git"
+  },
+  "keywords": [
+    "sentry",
+    "sdk",
+    "browser"
+  ],
+  "author": "zyyrabbit",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zyyrabbit/sentry-sdk/issues"
+  },
+  "homepage": "https://github.com/zyyrabbit/sentry-sdk#readme",
+  "dependencies": {
+    "@sentry/browser": "^5.27.3",
+    "@sentry/integrations": "^5.27.3",
+    "vue": "^2.6.12"
+  }
+}
