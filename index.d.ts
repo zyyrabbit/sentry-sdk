@@ -5,7 +5,7 @@ type Options = BrowserOptions & {
 }
 
 declare class Report {
-  static install(Vue, options: Options): void
+  static install(Vue: any, options: Options): void
   static init(options: Options): void
   static registerError(): void
   static log(exception: Error, data: any): void

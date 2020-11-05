@@ -7,7 +7,7 @@ class Report {
    * @param {*} Vue 
    * @param {*} options 
    */
-  static install(Vue, options = {}) {
+  static install (Vue, options = {}) {
     options.Vue = Vue;
     Report.init(options);
   }
