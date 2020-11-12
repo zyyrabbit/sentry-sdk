@@ -14,8 +14,8 @@ An sdk sentry
     import Vue from 'vue';
     import Report from 'sentry-sdk';
     Vue.use(Report, {
-      release: String, // 用于source-map，匹配对应文件
-      dsn: String // 标识sentry 项目，需要在sentry 管理台新建项目后获取
+      release: String, // 用于source-map，匹配对应相应版本号
+      dsn: String // 上传错误对应项目 url, 标识sentry 项目，需要在sentry 管理台新建项目后获取
       ... // 其他可以传入的配置项
     })
 ```

@@ -35,7 +35,7 @@ class Report {
    */
   static registerError () {
     window.addEventListener('error', (e) => {
-      if (!e.target) return;
+      if (!e.target || !e.target.tagName) return;
       const typeName = e.target.tagName.toLowerCase();
       if (typeName === 'link' || typeName === 'script') {
         const scoureUrl = e.target.href || e.target.src;
