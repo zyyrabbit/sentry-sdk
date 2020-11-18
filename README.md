@@ -22,10 +22,10 @@ project=project
 token=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-url: sentry部署地址
-org: 管理设置项目所属组织
-project: 管理台设置项目名称
-token: {url}/settings/account/api/auth-tokens/ 下创建请求token
+url: sentry部署地址  
+org: 管理设置项目所属组织  
+project: 管理台设置项目名称  
+token: {url}/settings/account/api/auth-tokens/ 下创建请求token  
 
 ```tsx
     import Vue from 'vue';
