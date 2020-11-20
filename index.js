@@ -1,7 +1,7 @@
-import * as Sentry from '@sentry/browser';
-import * as Integrations from '@sentry/integrations';
+const Sentry = require('@sentry/browser');
+const Integrations = require('@sentry/integrations');
 
-class Report {
+export default class Report {
   /**
    * 用于Vue 插件加载问题
    * @param {*} Vue 
@@ -11,12 +11,12 @@ class Report {
     options.Vue = Vue;
     Report.init(options);
   }
-  
   /**
    * 初始化函数
    * @param {*} options 
    */
   static init (options = {}) {
+    console.log(Integrations.Vue);
     // sentry初始化参数
     if (options.Vue) {
       options.integrations = [
@@ -58,7 +58,4 @@ class Report {
       extra
     });
   }
-
 }
-
-export default Report;

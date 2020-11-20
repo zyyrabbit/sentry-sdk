@@ -2,9 +2,11 @@
   "name": "sentry-sdk",
   "version": "0.1.2",
   "description": "An sentry sdk",
-  "main": "index.js",
+  "main": "lib/index.commonjs2.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config ./build/webpack.commonjs.js",
+    "pub": "npm run build && np --yolo && auto-changelog"
   },
   "repository": {
     "type": "git",
@@ -24,5 +26,15 @@
   "dependencies": {
     "@sentry/browser": "^5.27.3",
     "@sentry/integrations": "^5.27.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "auto-changelog": "^2.2.1",
+    "babel-loader": "^8.2.1",
+    "np": "^7.0.0",
+    "webpack": "^5.6.0",
+    "webpack-cli": "^4.2.0"
   }
 }
