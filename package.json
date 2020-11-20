@@ -24,14 +24,16 @@
   },
   "homepage": "https://github.com/zyyrabbit/sentry-sdk#readme",
   "dependencies": {
-    "@babel/runtime": "^7.12.5",
+    "@babel/runtime-corejs3": "^7.12.5",
     "@sentry/browser": "^5.27.3",
     "@sentry/integrations": "^5.27.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.1",
     "@babel/core": "^7.12.3",
+    "@babel/plugin-transform-runtime": "^7.12.1",
     "@babel/preset-env": "^7.12.1",
+    "@babel/runtime": "^7.12.5",
     "auto-changelog": "^2.2.1",
     "babel-loader": "^8.2.1",
     "np": "^7.0.0",
