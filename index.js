@@ -7,7 +7,7 @@ export default class Report {
    * @param {*} Vue 
    * @param {*} options 
    */
-  install (Vue, options = {}) {
+  static install (Vue, options = {}) {
     options.Vue = Vue;
     Report.init(options);
   }
@@ -15,8 +15,7 @@ export default class Report {
    * 初始化函数
    * @param {*} options 
    */
-  init (options = {}) {
-    console.log(Integrations.Vue);
+  static init (options = {}) {
     // sentry初始化参数
     if (options.Vue) {
       options.integrations = [
@@ -33,7 +32,7 @@ export default class Report {
   /**
    * 处理资源加载失败异常
    */
-  registerError () {
+  static registerError () {
     window.addEventListener('error', (e) => {
       if (!e.target || !e.target.tagName) return;
       const typeName = e.target.tagName.toLowerCase();
@@ -51,7 +50,7 @@ export default class Report {
    * @param {*} exception @ Exception
    * @param {*} extra 
    */
-  log (exception, extra = {}) {
+  static log (exception, extra = {}) {
     extra.date = new Date();
     Sentry.captureException(exception, {
       level: Sentry.Severity.Error,

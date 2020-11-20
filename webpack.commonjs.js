@@ -1,4 +1,5 @@
 const webpack = require('webpack')
+const path = require('path')
 
 const webpackConfig = {
   mode: 'production',
@@ -6,7 +7,7 @@ const webpackConfig = {
     index: './index.js',
   },
   output: {
-    path: process.cwd(),
+    path: path.join(process.cwd(), 'lib'),
     filename: 'index.commonjs2.js',
     libraryTarget: 'commonjs2'
   },
