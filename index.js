@@ -1,22 +1,21 @@
-import * as Sentry from '@sentry/browser';
-import * as Integrations from '@sentry/integrations';
+import Sentry from '@sentry/browser';
+import Integrations from '@sentry/integrations';
 
-class Report {
+export default class Report {
   /**
    * 用于Vue 插件加载问题
    * @param {*} Vue 
    * @param {*} options 
    */
-  static install (Vue, options = {}) {
+  install (Vue, options = {}) {
     options.Vue = Vue;
     Report.init(options);
   }
-  
   /**
    * 初始化函数
    * @param {*} options 
    */
-  static init (options = {}) {
+  init (options = {}) {
     // sentry初始化参数
     if (options.Vue) {
       options.integrations = [
@@ -33,7 +32,7 @@ class Report {
   /**
    * 处理资源加载失败异常
    */
-  static registerError () {
+  registerError () {
     window.addEventListener('error', (e) => {
       if (!e.target || !e.target.tagName) return;
       const typeName = e.target.tagName.toLowerCase();
@@ -51,14 +50,11 @@ class Report {
    * @param {*} exception @ Exception
    * @param {*} extra 
    */
-  static log (exception, extra = {}) {
+  log (exception, extra = {}) {
     extra.date = new Date();
     Sentry.captureException(exception, {
       level: Sentry.Severity.Error,
       extra
     });
   }
-
 }
-
-export default Report;
